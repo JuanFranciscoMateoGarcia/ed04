@@ -1,7 +1,24 @@
 package org.example;
 
 public class Main {
+
     public static void main(String[] args) {
+        // Inicializar la agenda con los contactos
+        Agenda agendaContactos = initAgenda();
+
+        System.out.println("\nDespués de añadir, eliminar y modificar contactos: ");
+        for (Contacto c : agendaContactos.getContacts()) {
+            System.out.println(c.getName() + " -> " + c.getPhones());
+        }
+    }
+
+    /**
+     * Inicializa una agenda con algunos contactos predeterminados, realiza operaciones
+     * de adición, eliminación y modificación de contactos.
+     *
+     * @return Una instancia de {@code Agenda} con los contactos ya modificados.
+     */
+    public static Agenda initAgenda() {
         // Crear una nueva agenda.
         Agenda agendaContactos = new Agenda();
 
@@ -25,9 +42,6 @@ public class Main {
         // Modificar el teléfono de un contacto existente en la agenda.
         agendaContactos.modifyPhoneNumber("John Doe", "1234567890", "6666666666");
 
-        System.out.println("\nDespués de añadir, eliminar y modificar contactos: ");
-        for (Contacto c : agendaContactos.getContacts()) {
-            System.out.println(c.getName() + " -> " + c.getPhones());
-        }
+        return agendaContactos;
     }
 }
