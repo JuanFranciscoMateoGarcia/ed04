@@ -28,7 +28,11 @@ public class Contacto {
      * @return Nombre del contacto.
      */
     public String getName() {
-        return this.name;
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     /**
@@ -37,6 +41,10 @@ public class Contacto {
      * @return Lista de números de teléfono.
      */
     public List<String> getPhones() {
-        return this.phones;
+        return phones;
+    }
+
+    public void setPhones(List<String> phones) {
+        this.phones = phones;
     }
 }
